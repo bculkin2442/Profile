@@ -5218,8 +5218,15 @@ to {
 .carousel-caption h4 {
     margin: 0 0 5px;
 }
-.carousel-caption p {
+.whiten p{
     margin-bottom: 0;
+    color: #FFFFFF;
+}
+.whiten a{
+    margin-bottom: 0;
+    color: #FFFFFF;
+    text-decoration: underline;
+    
 }
 .hero-unit {
     padding: 60px;
