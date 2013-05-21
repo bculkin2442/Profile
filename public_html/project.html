@@ -8,6 +8,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
         <!-- Le styles -->
         <link href="css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
@@ -80,6 +82,37 @@
                 border-right: 0;
                 border-radius: 0 3px 3px 0;
             }
+            .bs-docs-example {
+                position: relative;
+                margin: 15px 0;
+                padding: 39px 19px 14px;
+                *padding-top: 19px;
+                background-color: #DDD;
+                border: 1px solid #00663F;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+            }
+            .bs-docs-example::after {
+                content: "Active Content";
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                padding: 3px 7px;
+                font-size: 12px;
+                font-weight: bold;
+                background-color: #DDD;
+                border: 1px solid #00663F;
+                color: #00663F;
+                -webkit-border-radius: 4px 0 4px 0;
+                -moz-border-radius: 4px 0 4px 0;
+                border-radius: 4px 0 4px 0;
+            }
+            .centered {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
         </style>
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -114,29 +147,82 @@
             </div>
             <hr>
 
-            <!-- Example row of columns -->
-            <div class="row-fluid">
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+            <div class="jumbotron">
+                <h1>Projects</h1>
+            </div>
+            <div class="bs-docs-example">
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active"><a href="#psproj" data-toggle="tab">Photoshop Projects</a></li>
+                    <li class=""><a href="#profile" data-toggle="tab">Profile</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="#dropdown1" data-toggle="tab">@fat</a></li>
+                            <li><a href="#dropdown2" data-toggle="tab">@mdo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="psproj">
+                        <div class="centered">
+                            <h2>
+                                A sampling of my works.
+                            </h2>
+                            <p>
+                                Find the rest <a href="gallery.html">here</a>
+                            </p>
+                        </div>
+                        <div id="myCarousel" class="carousel slide">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item">
+                                    <img class="centered" src="img/PSY2/3DTest.png"/>
+                                    <div class="carousel-caption centered">
+                                        <h4>A test of Photoshop&apos;s 3D capabilities.</h4>
+                                        Download <a href="img/PSY2/3DTest.png"> Here </a>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/PSY2/BowBeforeMe.png" class="centered"/>
+                                    <div class="carousel-caption centered">
+                                        <h4>Mirroring, lens flare, and darkening make for a haunting poster</h4>
+                                        Download <a href="img/PSY2/BowBeforeMe.png"> Here </a> or <a href="img/PSY2/VisionLogo.png"> Here in Larger</a>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/PSY2/Card.png"/>
+                                    <div class="carousel-caption">
+                                        <h4> A card suitable for any holiday around the 25th of december</h4>
+                                        Download <a href="img/PSY2/BowBeforeMe.png"> Here </a> or <a href="img/PSY2/VisionLogo.png"> Here in Larger</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                    </div>
+                    <div class="tab-pane fade" id="dropdown1">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                    </div>
+                    <div class="tab-pane fade" id="dropdown2">
+                        <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                    </div>
                 </div>
             </div>
 
             <hr>
 
             <div class="footer">
-                <p>&copy; Company 2013</p>
+                <p>Contact me at <a href="mailto:scorpress@gmail.com"> scorpress@gmail.com</a></p>
             </div>
 
         </div> <!-- /container -->
@@ -144,7 +230,6 @@
         <!-- Le javascript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/bootstrap.js"></script>
 
     </body>
 </html>
